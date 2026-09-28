@@ -27,10 +27,9 @@ Co-seismic deformation of the 6 February 2023 earthquakes, measured with a Senti
 
 ## Data
 
-The GeoTIFFs are not included in this repository. They are openly available from the [COMET-LiCS Sentinel-1 InSAR portal](https://comet.nerc.ac.uk/comet-lics-portal/).
-<!-- Add the LiCSAR frame ID here, e.g. "Frame: 021D_05266_252525" -->
+The GeoTIFFs are not stored in the repository itself. Download them from this repository's [v1.0 release](https://github.com/zare2024/insar-earthquake-turkiye-2023/releases/tag/v1.0), or from the [COMET-LiCS Sentinel-1 InSAR portal](https://comet.nerc.ac.uk/comet-lics-portal/).
 
-Download these three files for the interferogram `20230129_20230210` and place them in `data/`:
+Place the three files in a folder named `data/` next to the notebook:
 
 ```
 data/20230129_20230210.geo.diff_pha.tif   # wrapped phase
