@@ -6,13 +6,14 @@ Co-seismic deformation of the 6 February 2023 earthquakes, measured with a Senti
 
 ## What the notebook does
 
-`insar_profile_analysis.ipynb` works through five steps:
+`insar_profile_analysis.ipynb` works through six steps:
 
 1. **Load the interferogram.** Wrapped phase, unwrapped phase and coherence for the pair 29 Jan 2023 to 10 Feb 2023, read as GeoTIFFs with `rasterio`.
 2. **Inspect it.** Fringe pattern and coherence map.
 3. **Extract a profile.** 2,000 samples along a line across the main fringe pattern. Pixel positions are converted to longitude/latitude through the GeoTIFF transform, and distances are computed as WGS84 geodesics with `pyproj` (profile length 425 km).
 4. **Quality control.** Samples with coherence below 0.2 are masked; 1,031 of 2,000 samples are kept.
 5. **Compare wrapped and unwrapped profiles** next to their coherence.
+6. **Export to GeoJSON.** The profile line and the samples that pass the coherence check (distance, phase, coherence) are written to [`profile.geojson`](profile.geojson) in WGS84 longitude/latitude. GitHub shows the file as a map.
 
 ## Results
 
@@ -44,7 +45,7 @@ pip install -r requirements.txt
 jupyter notebook insar_profile_analysis.ipynb
 ```
 
-Running the notebook writes all figures to `figures/`. The profile end points, number of samples and coherence threshold are set in the first code cell.
+Running the notebook writes all figures to `figures/` and the profile to `profile.geojson`. The profile end points, number of samples and coherence threshold are set in the first code cell.
 
 ## Credits
 
